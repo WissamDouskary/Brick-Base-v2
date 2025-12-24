@@ -2,11 +2,17 @@ package com.brickbase.platform.model;
 
 import com.brickbase.platform.enums.ProductStatus;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "products")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Product {
 
     @Id
