@@ -54,13 +54,6 @@ public class User {
     // worker attributes
     private String bio;
 
-    @Enumerated(EnumType.STRING)
-    private JobTypes jobTitle;
-
-    private String category;
-
-    private float price;
-
     @OneToMany(mappedBy = "worker")
     private List<WorkerImage> workerImage;
 }

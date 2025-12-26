@@ -1,5 +1,6 @@
 package com.brickbase.platform.model;
 
+import com.brickbase.platform.enums.JobTypes;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,10 @@ public class WorkerProfile {
     private String skills;
     private Double pricePerDay;
     private String description;
+
+    @Enumerated(EnumType.STRING)
+    private JobTypes jobTitle;
+    private String category;
 
     private boolean available = true;
 }
