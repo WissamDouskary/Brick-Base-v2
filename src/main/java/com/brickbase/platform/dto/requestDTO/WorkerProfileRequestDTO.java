@@ -1,5 +1,6 @@
 package com.brickbase.platform.dto.requestDTO;
 
+import com.brickbase.platform.enums.JobTypes;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -17,5 +18,9 @@ public class WorkerProfileRequestDTO {
     private Double pricePerDay;
 
     private String description;
+
+    private String jobTitle;
+
+    private String category;
 }
 
