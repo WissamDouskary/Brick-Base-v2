@@ -25,7 +25,6 @@ public class GlobalExceptionHandler {
 
         ErrorResponse response = ErrorResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
-                .title("VALIDATION_ERROR")
                 .message("Validation failed")
                 .httpStatus(HttpStatus.BAD_REQUEST)
                 .timestamp(LocalDateTime.now())
@@ -44,7 +43,6 @@ public class GlobalExceptionHandler {
 
         ErrorResponse response = ErrorResponse.builder()
                 .status(HttpStatus.BAD_REQUEST.value())
-                .title("VALIDATION_ERROR")
                 .message("Constraint violation")
                 .httpStatus(HttpStatus.BAD_REQUEST)
                 .timestamp(LocalDateTime.now())
@@ -58,7 +56,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleForbidden(AccessDeniedException ex) {
         ErrorResponse response = ErrorResponse.builder()
                 .status(HttpStatus.FORBIDDEN.value())
-                .title("FORBIDDEN")
                 .message(ex.getMessage() != null ? ex.getMessage() : "Access denied")
                 .httpStatus(HttpStatus.FORBIDDEN)
                 .timestamp(LocalDateTime.now())
@@ -71,7 +68,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleBusinessException(BusinessException ex) {
         ErrorResponse response = ErrorResponse.builder()
                 .status(ex.getHttpStatus().value())
-                .title("BUSINESS_ERROR")
                 .message(ex.getMessage())
                 .httpStatus(ex.getHttpStatus())
                 .timestamp(LocalDateTime.now())
@@ -84,7 +80,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleNotFound(ResourceNotFoundException ex) {
         ErrorResponse response = ErrorResponse.builder()
                 .status(HttpStatus.NOT_FOUND.value())
-                .title("NOT_FOUND")
                 .message(ex.getMessage())
                 .httpStatus(HttpStatus.NOT_FOUND)
                 .timestamp(LocalDateTime.now())
@@ -97,7 +92,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleAll(Exception ex) {
         ErrorResponse response = ErrorResponse.builder()
                 .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                .title("INTERNAL_SERVER_ERROR")
                 .message(ex.getMessage() != null ? ex.getMessage() : "Unexpected error occurred")
                 .httpStatus(HttpStatus.INTERNAL_SERVER_ERROR)
                 .timestamp(LocalDateTime.now())

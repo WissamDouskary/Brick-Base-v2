@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 public class ApiResponse<T> {
 
     private int status;
-    private String title;
     private String message;
     private HttpStatus httpStatus;
     private T data;

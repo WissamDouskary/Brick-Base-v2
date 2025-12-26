@@ -13,7 +13,6 @@ import java.util.List;
 public class ErrorResponse {
 
     private int status;
-    private String title;
     private String message;
     private HttpStatus httpStatus;
     private LocalDateTime timestamp;
