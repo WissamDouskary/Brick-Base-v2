@@ -6,7 +6,7 @@ import com.brickbase.platform.model.Notification;
 import com.brickbase.platform.model.User;
 import org.mapstruct.*;
 
-@Mapper(config = MapperConfig.class)
+@Mapper(config = GlobalMapperConfig.class)
 public interface NotificationMapper {
 
     @Mapping(target = "user", source = "user")
