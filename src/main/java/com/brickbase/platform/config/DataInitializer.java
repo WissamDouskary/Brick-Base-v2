@@ -1,5 +1,6 @@
 package com.brickbase.platform.config;
 
+import com.brickbase.platform.exception.ResourceNotFoundException;
 import com.brickbase.platform.model.Permission;
 import com.brickbase.platform.model.Role;
 import com.brickbase.platform.enums.RoleName;
@@ -69,7 +70,8 @@ public class DataInitializer {
     }
 
     private void createRoleIfNotExists(RoleRepository roleRepository, RoleName roleName, Set<Permission> permissions) {
-        Role role = roleRepository.findByName(roleName);
+        Role role = roleRepository.findByName(roleName)
+                .orElse(null);
         if (role == null) {
             role = new Role();
             role.setName(roleName);
