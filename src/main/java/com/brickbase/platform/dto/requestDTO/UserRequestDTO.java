@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class UserRequestDTO {
 
-    @NotBlank
+    @NotBlank(message = "first name is required!")
     private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "last name is required!")
     private String lastName;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "mail is required!")
     private String email;
 
     @Size(min = 8, message = "Password must be at least 8 characters")
@@ -22,6 +22,9 @@ public class UserRequestDTO {
 
     private String phone;
     private String location;
+
+    @NotBlank(message = "role is required!")
+    private String role;
 
     // worker
     private String bio;
