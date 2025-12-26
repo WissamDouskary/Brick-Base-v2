@@ -51,7 +51,6 @@ public class User {
     @CreatedDate
     private LocalDateTime createdAt;
 
-    // worker attributes
     private String bio;
 
     @OneToMany(mappedBy = "worker")

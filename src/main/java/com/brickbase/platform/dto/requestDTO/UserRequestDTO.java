@@ -20,18 +20,6 @@ public class UserRequestDTO {
     @Size(min = 8, message = "Password must be at least 8 characters")
     private String password;
 
-    private String phone;
-    private String location;
-
     @NotBlank(message = "role is required!")
     private String role;
-
-    // worker
-    private String bio;
-    private JobTypes jobTitle;
-    private String category;
-
-    @PositiveOrZero
-    private float price;
 }
-
